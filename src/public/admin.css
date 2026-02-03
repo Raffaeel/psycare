@@ -1,0 +1,341 @@
+
+/* CONFIGURAÇÕES GERAIS */
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d0cbcb;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* HEADER FIXO */
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background-color: #d7dcdef0;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 8000;
+}
+
+.container img {
+    margin: -85px 0 0 2px;
+    margin-left: 20px;
+    width: 250px;
+    height: auto;
+}
+/* MENU LATERAL  */
+
+
+.menu {
+    position: fixed;
+    top: 121px;
+    left: 0;
+    width: 180px;
+    height: calc(100vh - 120px);
+    background-color: rgba(2, 32, 62, 0.941);
+    display: flex;
+    flex-direction: column;
+    margin-top: 22px;
+}
+
+/* Botões do menu */
+.menu-button {
+    color: rgb(235, 237, 239);
+    padding: 14px 20px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: rgba(5, 50, 85, 0.656);
+    border: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.menu-button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Botão sair */
+.closed {
+    margin-top: auto;
+    margin-bottom: 55px;
+    width: 90%;
+    height: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    background-color: rgba(5, 50, 85, 0.656);
+    color: rgb(235, 237, 239);
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.closed:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* CONTEÚDO CENTRAL */
+
+
+.content {
+    position: absolute;
+    top: 120px;
+    left: 180px;
+    width: calc(100% - 180px);
+    height: calc(100vh - 120px);
+    overflow-y: auto;
+    padding: 20px;
+}
+
+
+
+/* CALENDÁRIO */
+
+.calendario {
+    padding: 20px;
+}
+
+.calendario h2 {
+    margin-bottom: 15px;
+    color: #1e293b;
+}
+
+.calendar {
+    width: 100%;
+    max-width: 420px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    padding: 16px;
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.calendar-header button {
+    background-color: #1450a5;
+    color: #ffffff;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.calendar-header button:hover {
+    background-color: #0f3d80;
+}
+
+.calendar-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #1e293b;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+}
+
+.day-name {
+    text-align: center;
+    font-weight: bold;
+    color: #475569;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.day {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #1e293b;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.day:hover {
+    background-color: rgba(20, 80, 165, 0.15);
+}
+
+.day.active {
+    background-color: #1450a5;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.day.today {
+    border: 2px solid #1450a5;
+}
+
+.day.other-month {
+    color: #94a3b8;
+    cursor: default;
+}
+
+.day.other-month:hover {
+    background-color: transparent;
+}
+ 
+.appointment-form {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+
+}
+.appointment-form h3 {
+    margin-bottom: 12px;
+    color: #1e293b;
+}
+.appointment-form input, .apointment-form select {
+    width: 100%;
+    max-width: 420px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    outline: none;
+}   
+.appointment-form input:focus, .appointment-form select:focus {
+    border-color: #1450a5;
+}
+.appointment-form button {
+    background-color: #257bb5;
+    color: #ffffff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.appointment-form button:hover {
+    background-color: #152d51;
+}
+        
+.appoointment-form button:disabled {
+    background-color: #0f3d80;
+    cursor: not-allowed;
+}
+.appointment-form button:disabled:hover {
+    background-color: #94a3b8;
+}   
+
+
+/* PACIENTES */
+
+
+.paciente {
+    padding: 20px;
+}
+
+.paciente h2 {
+    margin-bottom: 16px;
+    color: #1e293b;
+}
+
+.patient-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 800px;
+}
+
+.patient-list label {
+    font-weight: bold;
+    color: #334155;
+}
+
+.patient-list input[type="text"] {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.patient-list input[type="text"]:focus {
+    border-color: #1450a5;
+}
+
+.patient-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.patient-card h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #1450a5;
+}
+
+.patient-card p {
+    margin: 4px 0;
+    color: #334155;
+}
+
+.add-patient-form {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.add-patient-form h3 {
+    margin-bottom: 12px;
+    color: #1e293b;
+}
+
+.add-patient-form input {
+    width: 100%;
+    max-width: 420px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    outline: none;
+}
+
+.add-patient-form input:focus {
+    border-color: #1450a5;
+}
+
+.add-patient-form button {
+    background-color: #1450a5;
+    color: #ffffff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.add-patient-form button:hover {
+    background-color: #0f3d80;
+}

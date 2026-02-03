@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>psycare</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <img src="img/LOGO1.png" alt="Logo">
+    </div>
+</header>
+
+<nav class="menu">
+    <button class="menu-button">Calendario</button>
+    <button class="menu-button">Dashboard</button>     
+    <button class="menu-button">Mensaguens</button>
+    <button class="menu-button">Paciente</button>  
+    <button class="menu-button">Prontuario</button>   
+    <button class="menu-button">Online</button>
+    <button class="closed">Sair</button>
+</nav>
+
+<main class="content">
+
+    <section class="calendario">
+        <h2>Calendario</h2>
+        <div class="calendar">
+            <div class="calendar-header">
+                <button class="prev-month">&lt;</button>
+                <h3>October 2023</h3>       
+                <button class="next-month">&gt;</button>
+            </div>
+
+            <div class="calendar-grid">
+                <div class="day-name">Sunday</div>
+                <div class="day-name">Monday</div>
+                <div class="day-name">Tuesday</div>
+                <div class="day-name">Wednesday</div>
+                <div class="day-name">Thursday</div>
+                <div class="day-name">Friday</div>
+                <div class="day-name">Sat</div>
+
+                <div class="day">1</div>
+                <div class="day">2</div>
+                <div class="day">3</div>
+                <div class="day">4</div>
+                <div class="day">5</div>
+                <div class="day">6</div>
+                <div class="day">7</div>
+                <div class="day">8</div>
+                <div class="day">9</div>
+                <div class="day">10</div>
+                <div class="day">11</div>
+                <div class="day">12</div>
+                <div class="day">13</div>
+                <div class="day">14</div>
+                <div class="day">15</div>
+                <div class="day">16</div>
+                <div class="day">17</div>
+                <div class="day">18</div>
+                <div class="day">19</div>
+                <div class="day">20</div>
+                <div class="day">21</div>
+                <div class="day">22</div>
+                <div class="day">23</div>
+                <div class="day">24</div>
+                <div class="day">25</div>
+                <div class="day">26</div>
+                <div class="day">27</div>
+                <div class="day">28</div>
+                <div class="day">29</div>
+                <div class="day">30</div>
+                <div class="day">31</div>
+            </div>
+
+            <div class="appointment-form">
+                <h3>Agendar Consulta</h3>
+        <input type="hidden" id="selectedDate" placeholder="Select a date">
+        <input type="hidden" id="selectedTime" placeholder="Select a time">
+        <input type="hidden" id="patientName" placeholder="Patient Name">
+        <button type="submit" id ="Agendar">Agendar Consulta</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="paciente">
+        <h2>Paciente</h2>
+
+        <div class="patient-list">
+            <label for="search">Buscar Paciente:</label>
+            <input type="text" id="search" name="search" placeholder="Digite o nome do paciente"><button type="submit">Buscar</button>
+
+            <div class="patient-card">
+                <div class="add-patient-form">
+                    <h3>Adicionar Novo Paciente</h3>
+                    <input type="text" placeholder="Nome completo">
+                    <input type="number" placeholder="Idade do Paciente">
+                    <input type="text" placeholder="Telefone">
+                    <input type="email" placeholder="Email">
+                    <input type="number" placeholder="CPF">
+                    <input type="text" placeholder="Endereço">
+                    <button type="submit">Adicionar Paciente</button>
+                </div>
+            </div>
+
+            <div class="patient-card">
+                <h3>Maria Oliveira</h3>
+                <p>Idade: 25</p>
+                <p>Última Consulta: 20/09/2023</p>
+            </div>
+
+            
+            </div>
+        </div>
+    </section>
+
+
+    <section class="mensaguens">
+        <h2>Mensaguens</h2>
+        <div class="messages-list">
+            <input type="text" id="buscar-paciente-mensagem" placeholder="Buscar paciente">
+            <button type="submit">Buscar</button>
+            <div class="message-card">
+                <h3>João Silva</h3>
+                <p>Olá, gostaria de agendar uma consulta.</p>
+                <span class="timestamp">10:30 AM</span>
+                <button class="reply-button">enviar</button>
+                <button class="delete-button">deletar</button>
+            </div>
+
+</main>
+
+</body>
+</html>
