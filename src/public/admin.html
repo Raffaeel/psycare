@@ -15,90 +15,70 @@
 </header>
 
 <nav class="menu">
-    <button class="menu-button">Calendario</button>
+    <button class="menu-button"id="btnCalendario" >Calendario</button>
     <button class="menu-button">Dashboard</button>     
-    <button class="menu-button">Mensaguens</button>
-    <button class="menu-button">Paciente</button>  
-    <button class="menu-button">Prontuario</button>   
-    <button class="menu-button">Online</button>
+    <button class="menu-button" id="btnMensagens">Mensaguens</button>
+    <button class="menu-button" id="btnPaciente">Paciente</button>  
+    <button class="menu-button" id="btnProntuario">Prontuario</button>   
+    <button class="menu-button" id="btnOline">Online</button>
     <button class="closed">Sair</button>
 </nav>
 
 <main class="content">
 
-    <section class="calendario">
+    <section class="calendario" id="calendario"style="display: none;">
         <h2>Calendario</h2>
         <div class="calendar">
             <div class="calendar-header">
                 <button class="prev-month">&lt;</button>
-                <h3>October 2023</h3>       
+                <h3 id="month-year"></h3>       
                 <button class="next-month">&gt;</button>
             </div>
 
-            <div class="calendar-grid">
+            <div class="calendar-grid" id="calendarGrid">
                 <div class="day-name">Sunday</div>
                 <div class="day-name">Monday</div>
                 <div class="day-name">Tuesday</div>
                 <div class="day-name">Wednesday</div>
                 <div class="day-name">Thursday</div>
                 <div class="day-name">Friday</div>
-                <div class="day-name">Sat</div>
+                <div class="day-name">Saturday</div>
 
-                <div class="day">1</div>
-                <div class="day">2</div>
-                <div class="day">3</div>
-                <div class="day">4</div>
-                <div class="day">5</div>
-                <div class="day">6</div>
-                <div class="day">7</div>
-                <div class="day">8</div>
-                <div class="day">9</div>
-                <div class="day">10</div>
-                <div class="day">11</div>
-                <div class="day">12</div>
-                <div class="day">13</div>
-                <div class="day">14</div>
-                <div class="day">15</div>
-                <div class="day">16</div>
-                <div class="day">17</div>
-                <div class="day">18</div>
-                <div class="day">19</div>
-                <div class="day">20</div>
-                <div class="day">21</div>
-                <div class="day">22</div>
-                <div class="day">23</div>
-                <div class="day">24</div>
-                <div class="day">25</div>
-                <div class="day">26</div>
-                <div class="day">27</div>
-                <div class="day">28</div>
-                <div class="day">29</div>
-                <div class="day">30</div>
-                <div class="day">31</div>
-            </div>
+                </div>
 
             <div class="appointment-form">
                 <h3>Agendar Consulta</h3>
-        <input type="hidden" id="selectedDate" placeholder="Select a date">
-        <input type="hidden" id="selectedTime" placeholder="Select a time">
-        <input type="hidden" id="patientName" placeholder="Patient Name">
-        <button type="submit" id ="Agendar">Agendar Consulta</button>
+        <input type="date" id="selectedDate" placeholder="Select a date">
+        <input type="time" id="selectedTime" placeholder="Select a time">
+        <input type="text" id="selectedPatient" placeholder="Patient Name">
+        <button type="button" id ="Agendar">Agendar Consulta</button>
+        
+    </div>
+    <br>
+<button onclick="toggleLista()">Mostrar Lista</button>
+
+    <div class="appointment-list">
+        <h3>Lista de Agendamentos</h3>
+        <ul id="appointmentsList"></ul>
+    </div>
+       
             </div>
         </div>
+
+
+
     </section>
 
-    <section class="paciente">
+    <section class="paciente" id="paciente" style="display: none;">
         <h2>Paciente</h2>
 
         <div class="patient-list">
-            <label for="search">Buscar Paciente:</label>
-            <input type="text" id="search" name="search" placeholder="Digite o nome do paciente"><button type="submit">Buscar</button>
 
             <div class="patient-card">
                 <div class="add-patient-form">
                     <h3>Adicionar Novo Paciente</h3>
                     <input type="text" placeholder="Nome completo">
-                    <input type="number" placeholder="Idade do Paciente">
+                    <input type="date" placeholder="Idade do Paciente">
                     <input type="text" placeholder="Telefone">
                     <input type="email" placeholder="Email">
                     <input type="number" placeholder="CPF">
@@ -108,7 +88,7 @@
             </div>
 
             <div class="patient-card">
-                <h3>Maria Oliveira</h3>
+                <h3>manuella  Oliveira</h3>
                 <p>Idade: 25</p>
                 <p>Última Consulta: 20/09/2023</p>
             </div>
@@ -119,20 +99,140 @@
     </section>
 
 
-    <section class="mensaguens">
+    <section class="mensaguens" id="mensagens" style="display: none;">
         <h2>Mensaguens</h2>
         <div class="messages-list">
-            <input type="text" id="buscar-paciente-mensagem" placeholder="Buscar paciente">
-            <button type="submit">Buscar</button>
-            <div class="message-card">
-                <h3>João Silva</h3>
-                <p>Olá, gostaria de agendar uma consulta.</p>
-                <span class="timestamp">10:30 AM</span>
-                <button class="reply-button">enviar</button>
-                <button class="delete-button">deletar</button>
+            <div class="search-row">
+                <input type="text" id="buscar-paciente-mensagem" placeholder="Buscar paciente">
+                <button type="submit" class="search-button">Buscar</button>
             </div>
 
+            <div class="compose-left">
+                <input type="text" id="mensagem-assunto" placeholder="Assunto">
+                <textarea id="mensagem-texto" placeholder="Escreva sua mensagem aqui..." rows="7"></textarea>
+                <div class="compose-actions">
+                    <button class="reply-button">Enviar</button>
+                </div>
+            </div>
+
+         
+            </div>
+        </div>
+    </section>
+
+        <!-- Prontuário integrado -->
+        <section class="prontuario" id="prontuario" style="display: none;">
+                <h2>Prontuário do Paciente</h2>
+                <div class="pr-grid">
+                        <div class="pr-left">
+                                <label for="pr-buscar">Buscar paciente</label>
+                                <div class="pr-search-row">
+                                    <input id="pr-buscar" placeholder="Digite o nome do paciente">
+                                    <button id="pr-btnBuscar">Buscar</button>
+                                    <button id="pr-clear" title="Limpar busca">✕</button>
+                                    <button id="pr-close" title="Fechar prontuário">Fechar</button>
+                                </div>
+
+                                <h4>Pacientes</h4>
+                                <ul id="pr-patient-list" class="pr-patient-list">
+                                        <li data-id="1">João Silva</li>
+                                        <li data-id="2">Maria Oliveira</li>
+                                        <li data-id="3">Carlos Pereira</li>
+                                </ul>
+
+                                <div class="pr-last">
+                                        <h5>Último prontuário</h5>
+                                        <div id="pr-last-record">— nenhum —</div>
+                                        <div class="pr-last-actions">
+                                                <button id="pr-restore">Restaurar</button>
+                                                <button id="pr-download">Baixar</button>
+                                        </div>
+                                </div>
+                        </div>
+
+                        <div class="pr-right">
+                                <div class="pr-toolbar">
+                                        <button data-cmd="bold" title="Negrito"><strong>B</strong></button>
+                                        <button data-cmd="italic" title="Itálico"><em>I</em></button>
+                                        <label class="pr-color">Cor <input id="pr-color" type="color" value="#000000"></label>
+                                        <button id="pr-save" class="pr-save">Salvar</button>
+                                </div>
+
+                                <div class="pr-editor-card">
+                                        <div class="pr-meta">
+                                                <div>Paciente: <span id="pr-patient-name">— selecione —</span></div>
+                                                <div>Data: <span id="pr-date">—</span></div>
+                                        </div>
+                                        <div id="pr-editor" class="pr-editor" contenteditable="true">Selecione um paciente para abrir/editar o prontuário.</div>
+                                </div>
+                        </div>
+                </div>
+        </section>
+
+        <!-- Consultas Online (Teams) -->
+        <section class="online-consultas"id="online" style="display: none;">
+                <h2>Consultas Online</h2>
+                <div class="oc-grid">
+                        <div class="oc-left">
+                                <label for="oc-paciente">Paciente</label>
+                                <select id="oc-paciente">
+                                        <option value="">— Selecione —</option>
+                                        <option value="1">João Silva</option>
+                                        <option value="2">Maria Oliveira</option>
+                                        <option value="3">Carlos Pereira</option>
+                                </select>
+
+                                <label for="oc-data">Data/Hora</label>
+                                <input id="oc-data" type="datetime-local">
+
+                                <button id="oc-agendar">Agendar</button>
+
+                                <h4>Próximas Consultas</h4>
+                                <div id="oc-proximas" class="oc-list">
+                                        <div class="oc-item">
+                                                <p><strong>João Silva</strong></p>
+                                                <p>15/02/2026 14:00</p>
+                                                <button class="oc-iniciar">Iniciar</button>
+                                        </div>
+                                </div>
+                        </div>
+
+                        <div class="oc-right">
+                                <div class="oc-video">
+                                        <div id="oc-status" class="oc-status">Nenhuma consulta ativa</div>
+                                        <div id="oc-player" style="background: #f0f0f0; min-height: 300px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #999;">
+                                                Área de vídeo (Teams/Zoom)
+                                        </div>
+                                </div>
+
+                                <div class="oc-controls">
+                                        <button id="oc-mute" title="Mutar">🔊</button>
+                                        <button id="oc-camera" title="Câmera">📹</button>
+                                        <button id="oc-screen" title="Compartilhar tela">🖥️</button>
+                                        <button id="oc-end" class="oc-end">Encerrar</button>
+                                </div>
+
+                                <h4>Histórico</h4>
+                                <div id="oc-historico" class="oc-history">
+                                        <div class="oc-history-item">
+                                                <p>João Silva - 10/02/2026 15:30</p>
+                                                <button class="oc-notas">Notas</button>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </section>
+
 </main>
+
+
+<script src="agenda.js"></script>
+<script src="paciente.js"></script>
+<script src="mensagens.js"></script>
+<script src="prontuario.js"></script>
+<script src="online.js"></script>       
+
+
 
 </body>
 </html>

@@ -1,5 +1,10 @@
 
 /* CONFIGURAÇÕES GERAIS */
+.mensaguens .prontuario .online-consultas{
+    display: none;
+}
+
+
 
 
 body {
@@ -36,7 +41,7 @@ header {
 
 .menu {
     position: fixed;
-    top: 121px;
+    top: 128px;
     left: 0;
     width: 180px;
     height: calc(100vh - 120px);
@@ -103,8 +108,18 @@ header {
 
 /* CALENDÁRIO */
 
+
+.day.has-event {
+    background-color: rgba(0, 180, 255, 0.35);
+    border-radius: 8px;
+}
+
+
+
+
+
 .calendario {
-    padding: 20px;
+    padding: 48px;
 }
 
 .calendario h2 {
@@ -114,7 +129,7 @@ header {
 
 .calendar {
     width: 100%;
-    max-width: 420px;
+    max-width: 520px;
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
@@ -153,22 +168,14 @@ header {
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 6px;
+    gap: 8px;
 }
 
-.day-name {
-    text-align: center;
-    font-weight: bold;
-    color: #475569;
-    padding: 8px 0;
-    font-size: 14px;
-}
 
-.day {
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+
+.day {padding: 10px;
+
     border-radius: 8px;
     cursor: pointer;
     color: #1e293b;
@@ -198,6 +205,13 @@ header {
     background-color: transparent;
 }
  
+
+
+
+
+
+
+
 .appointment-form {
     margin-top: 20px;
     padding-top: 20px;
@@ -209,7 +223,7 @@ header {
     color: #1e293b;
 }
 .appointment-form input, .apointment-form select {
-    width: 100%;
+    width: 93%;
     max-width: 420px;
     padding: 10px 12px;
     margin-bottom: 10px;
@@ -218,6 +232,7 @@ header {
     outline: none;
 }   
 .appointment-form input:focus, .appointment-form select:focus {
+    
     border-color: #1450a5;
 }
 .appointment-form button {
@@ -319,6 +334,7 @@ header {
     border-radius: 8px;
     border: 1px solid #cbd5e1;
     outline: none;
+    flex-direction: column;
 }
 
 .add-patient-form input:focus {
@@ -326,6 +342,7 @@ header {
 }
 
 .add-patient-form button {
+  
     background-color: #1450a5;
     color: #ffffff;
     border: none;
@@ -339,3 +356,90 @@ header {
 .add-patient-form button:hover {
     background-color: #0f3d80;
 }
+
+/* MENSAGENS - layout final semelhante ao mockup */
+.mensaguens {
+    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+}
+
+.mensaguens h2 { margin-bottom: 18px; color: #1e293b; }
+
+.messages-list {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    grid-auto-rows: auto;
+    gap: 16px 20px;
+    align-items: start;
+    max-width: 1000px;
+}
+
+.search-row { grid-column: 1 / 2; }
+.search-row { display:flex; gap:8px; align-items:center; }
+.search-row input { flex:1 1 auto; padding:8px 10px; border-radius:6px; border:1px solid #cbd5e1; }
+.search-button { padding:8px 12px; border-radius:6px; background:#1450a5; color:#fff; border:none; }
+
+.compose-left { grid-column: 1 / 2; display:flex; flex-direction:column; gap:8px; }
+.compose-left input, .compose-left textarea { width:100%; padding:10px 12px; border-radius:8px; border:1px solid #cbd5e1; }
+.compose-left textarea { min-height:170px; resize:vertical; }
+.compose-actions { display:flex; justify-content:flex-start; }
+.compose-actions .reply-button { background:#16a34a; color:#fff; padding:8px 14px; border-radius:8px; border:none; }
+
+.messages-list > .message-card { grid-column: 1 / -1; }
+.message-card { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px; border-radius:12px; background:#fff; box-shadow:0 8px 24px rgba(2,6,23,0.06); }
+.message-info h3 { margin:0 0 6px 0; color:#1450a5; }
+.message-info p { margin:0; color:#334155; }
+.message-actions { display:flex; gap:10px; align-items:center; }
+.timestamp { color:#64748b; font-size:13px; }
+.reply-button { background:#16a34a; color:#fff; padding:8px 12px; border-radius:8px; border:none; }
+.delete-button { background:#ef4444; color:#fff; padding:8px 12px; border-radius:8px; border:none; }
+
+@media (max-width:900px) {
+    .messages-list { grid-template-columns: 1fr; }
+    .compose-right, .compose-left, .search-row { grid-column: 1 / -1; }
+    .compose-right textarea { min-height:140px; }
+    .message-card { flex-direction:column; align-items:stretch; }
+    .message-actions { justify-content:flex-end; margin-top:8px; }
+}
+
+/* PRONTUÁRIO  */
+.prontuario { padding: 15px 0 40px; margin-left: 15%; }
+.prontuario h2 { color: #1e293b; margin-bottom: 8px; font-size: 18px; }
+.pr-grid { display:grid; grid-template-columns: 180px 1fr; gap:12px; align-items:start; max-width: 900px; }
+.pr-left { background: #fff; padding:10px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.06); height:100%; box-sizing:border-box; font-size:13px; }
+.pr-search-row { display:flex; gap:6px; margin-bottom:8px; align-items:center; flex-wrap:wrap; }
+.pr-search-row input { flex:1 1 auto; min-width:0; padding:6px; border:1px solid #cbd5e1; border-radius:6px; font-size:12px; }
+.pr-search-row button { padding:6px 8px; background:#1450a5; color:#fff; border:none; border-radius:6px; font-size:12px; }
+.pr-patient-list { list-style:none; padding:0; margin:6px 0 8px; max-height:160px; overflow:auto; font-size:13px; }
+.pr-patient-list li { padding:6px 4px; border-bottom:1px solid #eef2f7; cursor:pointer; }
+.pr-patient-list li:hover { background:#f8fafc; }
+.pr-last { margin-top:8px; font-size:12px; }
+.pr-last-record { background:#f1f5f9; padding:6px; border-radius:6px; margin:6px 0; font-size:11px; }
+.pr-search-row button#pr-clear { background:transparent; border:1px solid #e2e8f0; color:#475569; padding:4px 6px; border-radius:6px; cursor:pointer; font-size:12px; }
+.pr-search-row button#pr-clear:hover { background:#f8fafc; }
+.pr-search-row button#pr-close { background:#ef4444; border:none; color:#fff; padding:4px 6px; border-radius:6px; cursor:pointer; font-size:12px; }
+.pr-search-row button#pr-close:hover { background:#dc2626; }
+
+/* prevent search block from overlapping menu */
+.prontuario { clear: both; }
+.pr-last-actions { display:flex; gap:6px; }
+.pr-last-actions button { padding:6px 8px; border-radius:6px; border:none; background:#1450a5; color:#fff; font-size:12px; }
+
+.pr-right { background:#f9fafb; padding:12px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.06); }  
+.pr-toolbar { display:flex; gap:6px; align-items:center; margin-bottom:8px; }
+.pr-toolbar button { padding:6px 8px; border-radius:6px; border:1px solid #e2e8f0; background:#fff; cursor:pointer; font-size:12px; }
+.pr-color input { margin-left:4px; vertical-align:middle; width:32px; height:28px; }
+.pr-color { font-size:12px; }
+.pr-save { margin-left:auto; background:#16a34a; color:#fff; border:none; padding:6px 10px; border-radius:8px; font-size:12px; }
+
+.pr-editor-card { background:#fff; padding:10px; border-radius:8px; box-shadow:0 6px 16px rgba(2,6,23,0.04); }
+.pr-meta { display:flex; justify-content:space-between; color:#475569; margin-bottom:6px; font-size:12px; }
+.pr-editor { min-height:100px; max-height:240px; border:1px solid #e6eef6; padding:10px; border-radius:8px; background:#fff; outline:none; overflow:auto; font-size:13px; }
+
+@media (max-width:900px) {
+    .pr-grid { grid-template-columns: 1fr; }
+    .pr-right { order:2; }
+    .pr-left { order:1; }
+}
+

@@ -2,7 +2,7 @@ import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 import authRoutes from "./routes/authRoutes.js";
-
+import agendaRoutes from "./routes/agendaRoutes.js";
 const app = express();
 const PORT = 3000;
 
@@ -28,6 +28,7 @@ app.get("/admin", (req, res) => {
 
 // API
 app.use("/auth", authRoutes);
+app.use("/api", agendaRoutes);
 
 app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);
