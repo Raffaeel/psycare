@@ -1,12 +1,17 @@
 
-/* pegando elementos dom do paciente */
-const btnPaciente = document.getElementById('btnPaciente');
-const paciente = document.getElementById('paciente');
+document.addEventListener("DOMContentLoaded", function () {
 
-btnPaciente.addEventListener('click', () => {
-    if (paciente.style.display === 'none' ) {
-        paciente.style.display = 'block';   
-    } else {
-        paciente.style.display = 'none';
-    }   
+    const btnPaciente = document.getElementById('btnPaciente');
+    const paciente = document.getElementById('paciente');
+
+    btnPaciente.addEventListener('click', () => {
+        const estiloAtual = window.getComputedStyle(paciente).display;
+
+        if (estiloAtual === 'none') {
+            paciente.style.display = 'block';
+        } else {
+            paciente.style.display = 'none';
+        }
+    });
+
 });
