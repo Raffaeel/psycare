@@ -1,10 +1,14 @@
 
 /* CONFIGURAÇÕES GERAIS */
-.mensaguens .prontuario .online-consultas .paciente{
+.mensaguens .prontuario .online-consultas .paciente .calendario{
     display: none;
 }
 
-
+.has-event {
+    background-color: #488988;
+    color: white;
+    border-radius: 50%;
+}
 
 
 body {

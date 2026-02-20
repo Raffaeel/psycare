@@ -38,9 +38,9 @@ function getAllAgendamentos() {
 function deleteAgendamento(id) {
     const agenda = loadAgenda();
 
+    // remove o item pelo id
     const novaAgenda = agenda.filter(
-        agenda = agenda.filter(a => String(a.id) !== String(id))
-
+        a => String(a.id) !== String(id)
     );
 
     saveAgenda(novaAgenda);

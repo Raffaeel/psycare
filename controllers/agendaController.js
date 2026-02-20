@@ -37,19 +37,19 @@ function listarAgendamentos(req, res) {
 
 
 
-function removerAgendamento(req, res) {
+
+
+
+export function removerAgendamento(req, res) {
     const { id } = req.params;
 
-    if (!id) {
-        return res.status(400).json({ erro: "ID do agendamento é necessário" });
+    const novaAgenda = agendaModel.deleteAgendamento(id);
 
-
-    agendaModel.deleteAgendamento(id);
-
-    res.status(200).json({ mensagem: "Agendamento removido com sucesso" });
-}}
-
-
+    res.json({
+        message: "Agendamento removido",
+        agenda: novaAgenda
+    });
+}
 
 export default {
     criarAgendamento,
