@@ -70,28 +70,30 @@
     </section>
 
     <section class="paciente" id="paciente" style="display: none;">
-        <h2>Paciente</h2>
+        <h2> Cadastro do Paciente</h2>
 
         <div class="patient-list">
 
             <div class="patient-card">
                 <div class="add-patient-form">
                     <h3>Adicionar Novo Paciente</h3>
-                    <input type="text" placeholder="Nome completo">
-                    <input type="date" placeholder="Idade do Paciente">
-                    <input type="text" placeholder="Telefone">
-                    <input type="email" placeholder="Email">
-                    <input type="number" placeholder="CPF">
-                    <input type="text" placeholder="Endereço">
-                    <button type="submit">Adicionar Paciente</button>
+                    <input type="text" id="nome" placeholder="nome do paciente">
+                <input type="date" id="data" placeholder="data de nascimento">
+                <input type="text" id="telefone" placeholder="telefone">
+                <input type="email" id="email"  placeholder="email">
+                <input type="number" id="cpf" placeholder="cpf">
+                <input type="text" id="endereco" placeholder="endereco" >
+                   <br>
+                    <button type="button" id="btnAdicionarPaciente">Adicionar Paciente</button>
+                    <button id="btnMostrarLista">Mostrar Lista</button>
                 </div>
             </div>
-
-            <div class="patient-card">
-                <h3>manuella  Oliveira</h3>
-                <p>Idade: 25</p>
-                <p>Última Consulta: 20/09/2023</p>
-            </div>
+       
+             <div class="appointment-list" style="display: none;">
+        <h3>Lista de cadastro</h3>
+        <ul id="appointmentsList"></ul>
+        
+         </div>
 
             
             </div>

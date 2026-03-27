@@ -3,6 +3,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import authRoutes from "./routes/authRoutes.js";
 import agendaRoutes from "./routes/agendaRoutes.js";
+import cadastroRoutes from "./routes/cadastroRoutes.js";
 const app = express();
 const PORT = 3000;
 
@@ -26,9 +27,12 @@ app.get("/admin", (req, res) => {
     res.sendFile(path.join(publicPath, "admin.html"));
 });
 
+
 // API
 app.use("/auth", authRoutes);
 app.use("/api", agendaRoutes);
+app.use("/api", cadastroRoutes);
+
 
 app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);

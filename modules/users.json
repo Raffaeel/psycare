@@ -4,5 +4,17 @@
     "name": "teste",
     "email": "teste1@gmail.com",
     "password": "$2b$10$Nsl5R44/WRBldvqrXgWzzOYzxv73KVSHSYRpw9G0o0ofj1eGJaC7u"
+  },
+  {
+    "id": 1774568877743,
+    "name": "bg",
+    "email": "bg@gamil.com",
+    "password": "$2b$10$8.2MEfc51s7gFuGyelo.p.rFm72vRrv8./fu/8aCqz7JPrUPi4.rC"
+  },
+  {
+    "id": 1774569346516,
+    "name": "bigpsic",
+    "email": "bg@gmail.com",
+    "password": "$2b$10$jIdCSPmvuRXKp7ErfZkShOS/05zvt8KqhFV1nAlA6H.pk09fDwPju"
   }
 ]

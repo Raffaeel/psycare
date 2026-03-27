@@ -1,0 +1,42 @@
+[
+  {
+    "nome": "rafael",
+    "telefone": "11963534680",
+    "email": "teste1@gamil.com",
+    "cpf": "41975514874",
+    "endereco": "rua dumont 23",
+    "id": "1771611956813"
+  },
+  {
+    "nome": "joao",
+    "telefone": "11946521321",
+    "email": "joao.barros@mail.com",
+    "cpf": "11124544123",
+    "endereco": "av soudev n 404",
+    "id": "1772080468175"
+  },
+  {
+    "nome": "gabriel",
+    "telefone": "41811406",
+    "email": "borgtescout@gmail",
+    "cpf": "41975514875",
+    "endereco": "av tamara",
+    "id": "1773700434764"
+  },
+  {
+    "nome": "eu",
+    "telefone": "41414141",
+    "email": "adsasdas",
+    "cpf": "14141414",
+    "endereco": "adasdasdasd",
+    "id": "1773701616213"
+  },
+  {
+    "nome": "aa",
+    "telefone": "22222",
+    "email": "22222",
+    "cpf": "41932525",
+    "endereco": "1445521",
+    "id": "1773702425872"
+  }
+]
